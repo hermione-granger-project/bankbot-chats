@@ -3,6 +3,7 @@ package com.bagusmahendra.bankbot.bankbot_chats.service;
 import org.springframework.stereotype.Service;
 
 import com.bagusmahendra.bankbot.bankbot_chats.controller.dto.ChatDTO;
+import com.bagusmahendra.bankbot.bankbot_chats.tool.AccountInquiryTool;
 
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.model.chat.ChatLanguageModel;
@@ -17,7 +18,7 @@ public class ChatsService {
     private final Assistant assistant;
     private static final String PROJECT_ID = "sandbox-431312";
     private static final String LOCATION = "us-central1";
-    private static final String MODEL_NAME = "gemini-1.5-flash";
+    private static final String MODEL_NAME = "gemini-1.0-pro";
 
     public ChatsService() {
         ChatLanguageModel visionModel = VertexAiGeminiChatModel.builder()
@@ -33,6 +34,7 @@ public class ChatsService {
         this.assistant = AiServices.builder(Assistant.class)
                 .chatLanguageModel(visionModel)
                 .chatMemory(chatMemory)
+                .tools(new AccountInquiryTool())
                 .build();
     }
 
