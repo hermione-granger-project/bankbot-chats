@@ -1,11 +1,9 @@
 package com.bagusmahendra.bankbot.bankbot_chats.repository;
 
-import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.bagusmahendra.bankbot.bankbot_chats.model.Accounts;
 
-import reactor.core.publisher.Mono;
-
-public interface AccountsRepository extends ReactiveMongoRepository<Accounts, String> {
-    Mono<Accounts> findByAccountNumber(String accountNumber);
+public interface AccountsRepository extends MongoRepository<Accounts, String> {
+    Accounts findByAccountNumber(String accountNumber);
 }
