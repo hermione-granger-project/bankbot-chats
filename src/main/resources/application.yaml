@@ -3,7 +3,7 @@ spring:
     name: bankbot-chats
   data:
     mongodb:
-      uri: ${MONGO_URI:mongodb://localhost:27017/bankbot-db}
+      uri: ${MONGO_URI:mongodb+srv://admin:root@cluster0.vwpz2pv.mongodb.net/bankbot_db?retryWrites=true&w=majority}
 logging:
   level:
     root: info
