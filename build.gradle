@@ -25,6 +25,7 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'dev.langchain4j:langchain4j-vertex-ai-gemini:0.33.0'
 	implementation 'dev.langchain4j:langchain4j:0.33.0'
