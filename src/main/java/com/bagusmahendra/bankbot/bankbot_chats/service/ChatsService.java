@@ -32,7 +32,7 @@ public class ChatsService {
                 .build();
 
         MessageWindowChatMemory chatMemory = MessageWindowChatMemory.builder()
-                .maxMessages(10)
+                .maxMessages(20)
                 .build();
 
         this.assistant = AiServices.builder(Assistant.class)
